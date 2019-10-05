@@ -24,6 +24,7 @@ namespace FriendLetter
                 }
             public void Configure(IApplicationBuilder app) //The Configure() method is built-in and required in all ASP.NET Core apps. ASP.NET calls Configure() when the app launches. It's responsible for telling our app how to handle requests to the server.
                 {
+                    app.UseDeveloperExceptionPage();  //This will produce a friendly error report when Razor fails to load.
                     app.UseMvc(routes => // tells our app to use the MVC framework to respond to HTTP requests. This block of code also sets up default routing for our application. It tells the project to use the Index action of the Home Controller as the default route. This will be our homepage. 
                     {
                         routes.MapRoute(
